@@ -23,7 +23,7 @@ export default class sampleproject extends Component {
   constructor(props) {
     super(props);
     let {width, height} = Dimensions.get('window')
-    
+
     this.state = {
       titleText: "What is the best way to test your applications against over one hundred devices?",
       wrongAnswerText1: 'Buy 101 devices',
@@ -41,7 +41,7 @@ export default class sampleproject extends Component {
     if (this.state.response) return this.renderAfterButton();
     return (
       <View testID='question_screen' style={styles.container}>
-        <Image source={require('./images/bitbar.png')} />
+        <Image source={require('./images/bitbar_new.png')} />
         <Text testID='question_text' style={styles.title}>
           {this.state.titleText}{'\n'}{'\n'}
         </Text>
@@ -71,7 +71,7 @@ export default class sampleproject extends Component {
     {
       return (
       <View style={styles.answer_screen_container}>
-      <Image source={require('./images/logo_cloud.png')} />
+      <Image source={require('./images/logo_cloud_new.png')} />
         <Text style={styles.right_answer_screen_title}>
           {this.state.response}!!!
         </Text>
@@ -84,7 +84,7 @@ export default class sampleproject extends Component {
     {
       return (
       <View style={styles.answer_screen_container}>
-      <Image source={require('./images/logo_cloud.png')} />
+      <Image source={require('./images/logo_cloud_new.png')} />
         <Text style={styles.wrong_answer_screen_title}>
           {this.state.response}!!!
         </Text>
@@ -104,79 +104,78 @@ export default class sampleproject extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, 
+    flex: 1,
     borderRadius: 4,
     borderWidth: 0.5,
-    paddingTop: 10, 
-    paddingBottom: 10, 
-    paddingLeft: 10, 
-    paddingRight: 10, 
-    justifyContent: 'flex-start', 
-    alignItems: 'center', 
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingLeft: 10,
+    paddingRight: 10,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
     backgroundColor: 'white',
     borderColor: 'lightblue',
   },
   title: {
     fontSize: PixelRatio.getFontScale() * (22),
-    flex: 1, 
+    flex: 1,
     fontWeight: 'bold',
     color: 'lightblue',
-    marginTop: 20, 
+    marginTop: 20,
     marginHorizontal: 20,
   },
   question_text: {
     fontSize: PixelRatio.getFontScale() * (18),
     fontWeight: 'bold',
     color: 'darkgray',
-    marginTop: 5, 
+    marginTop: 5,
     marginBottom: 5,
   },
   name_textfield: {
     fontSize: PixelRatio.getFontScale() * (16),
-    flex: 0.3, 
+    flex: 0.3,
     fontWeight: 'normal',
     color: 'darkgray',
-    marginTop: 10, 
+    marginTop: 10,
     marginBottom: 20,
     marginHorizontal: 20,
-    height: 50, 
+    height: 50,
     width: 180,
   },
   answer_screen_container: {
     flex: 1,
-    justifyContent: 'center', 
+    justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'white',
-    marginTop: 10, 
+    marginTop: 10,
     marginBottom: 20,
   },
   wrong_answer_screen_title: {
     fontSize: PixelRatio.getFontScale() * (25),
     fontWeight: 'bold',
     color: 'red',
-    marginTop: 10, 
+    marginTop: 10,
     marginBottom: 20,
   },
   wrong_answer_screen_text: {
     fontSize: PixelRatio.getFontScale() * (18),
     fontWeight: 'normal',
     color: 'darkgray',
-    marginTop: 10, 
+    marginTop: 10,
     marginBottom: 20,
   },
   right_answer_screen_title: {
     fontSize: PixelRatio.getFontScale() * (25),
     fontWeight: 'bold',
     color: 'green',
-    marginTop: 10, 
+    marginTop: 10,
     marginBottom: 20,
   },
   right_answer_screen_text: {
     fontSize: PixelRatio.getFontScale() * (18),
     fontWeight: 'normal',
     color: 'darkgray',
-    marginTop: 10, 
+    marginTop: 10,
     marginBottom: 20,
   },
 });
-

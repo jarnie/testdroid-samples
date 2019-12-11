@@ -3,7 +3,7 @@ describe('sampleproject', () => {
   	console.log('beforeEach');
     await device.reloadReactNative();
   });
-  
+
   it('should have testdroid question element visible', async () => {
     await waitFor(element(by.id('question_screen'))).toBeVisible().withTimeout(6000);
     await device.takeScreenshot('app-open');
@@ -23,28 +23,28 @@ describe('sampleproject', () => {
     // text input is not always activated on some devices
     {
      await element(by.id('text_input_field')).typeText('new testdroid user');
-    } 
+    }
     catch (e) {
      await element(by.id('text_input_field')).tap();
      await element(by.id('text_input_field')).typeText('new testdroid user');
     }
 
-    try 
+    try
     {
      // close keyboard iOS
      await element(by.label('Done')).atIndex(0).tap();
-    } 
+    }
     catch (e) {
     }
 
-    try 
+    try
     {
      // close keyboard Android
      await device.takeScreenshot('before-close-keyboard');
      //click android 'Back' button
      await device.sendADBInputCommand('keyevent 4');
      await device.takeScreenshot('after-close-keyboard');
-    } 
+    }
     catch (e) {
     }
 
@@ -93,32 +93,32 @@ describe('sampleproject', () => {
   it('should be able to see user name at correct answer screen', async () => {
     await waitFor(element(by.id('text_input_field'))).toBeVisible().withTimeout(6000);
 
-    try 
+    try
     {
       // text input is not always activated on some devices
      await element(by.id('text_input_field')).typeText('new testdroid user');
-    } 
+    }
     catch (e) {
      await element(by.id('text_input_field')).tap();
      await element(by.id('text_input_field')).typeText('new testdroid user');
     }
 
-    try 
+    try
     {
       // close keyboard iOS
       await element(by.label('Done')).atIndex(0).tap();
-    } 
+    }
     catch (e) {
     }
 
-    try 
+    try
     {
       // close keyboard Android
       await device.takeScreenshot('before-close-keyboard-2');
       //click android 'Back' button
       await device.sendADBInputCommand('keyevent 4');
       await device.takeScreenshot('after-close-keyboard-2');
-    } 
+    }
     catch (e) {
     }
 
@@ -130,10 +130,6 @@ describe('sampleproject', () => {
     await expect(element(by.id('correct_answer_button'))).toBeVisible();
     await element(by.id('correct_answer_button')).tap();
     await waitFor(element(by.text('You are right!!!'))).toBeVisible().withTimeout(6000);
-    await waitFor(element(by.text('Congratulations new testdroid user'))).toBeVisible().withTimeout(6000);
-    await device.takeScreenshot('correct-answer-screen-new-user-name');
     await expect(element(by.text('You are right!!!'))).toBeVisible();
-    //await expect(element(by.text('Congratulations new testdroid user'))).toBeVisible();
-    //await expect(element(by.type('ReactTextView'))).toHaveText('Congratulations new testdroid user');
   });
 })

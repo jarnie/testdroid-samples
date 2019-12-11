@@ -51,18 +51,9 @@ watchman --version
 echo "Npm install"
 npm install
 
-#build project
-#"${PWD}/node_modules/.bin/detox" build --configuration ios.sim.release
-
-#echo "Launching Detox server"
-# no need to start server for iOS simulator
-#"${PWD}/node_modules/.bin/detox" run-server &
-#"${PWD}/node_modules/.bin/detox" run-server > detox-server.log 2>&1 &
-
 cat package.json
 
 "${PWD}/node_modules/.bin/detox" test --configuration ios.sim.release --loglevel verbose > detox.log 2>&1
-#"${PWD}/node_modules/.bin/detox" test --configuration ios.sim.debug --loglevel verbose > detox.log 2>&1
 scriptExitStatus=$?
 
 ls -la detox.log
