@@ -30,13 +30,13 @@
         "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/sampleproject.app",
         "build": "xcodebuild -project ios/SampleProject.xcodeproj -scheme sampleproject -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
         "type": "ios.simulator",
-        "name": "iPhone 7"
+        "name": "iPhone 8"
       },
       "ios.sim.release": {
         "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/sampleproject.app",
         "build": "export RCT_NO_LAUNCH_PACKAGER=true && xcodebuild -project ios/sampleproject.xcodeproj -UseNewBuildSystem=NO -scheme sampleproject -configuration Release -sdk iphonesimulator -derivedDataPath ios/build -quiet",
         "type": "ios.simulator",
-        "name": "iPhone 7"
+        "name": "iPhone 8"
       },
       "android.device.release": {
         "binaryPath": "android/app/build/outputs/apk/release/app-release.apk",

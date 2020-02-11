@@ -44,6 +44,8 @@ echo $SCREENSHOTSFOLDER
 brew tap wix/brew
 brew install applesimutils
 
+applesimutils --list
+
 node --version
 npm -version
 watchman --version
